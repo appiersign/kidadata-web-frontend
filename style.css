@@ -1,0 +1,75 @@
+body {
+    background-color: black;
+    font-family: 'Dosis', sans-serif;
+}
+
+.bg-black {
+    background-color: black !important;
+}
+
+nav > a:first-child {
+    color: white !important;
+    letter-spacing: 1px;
+}
+
+nav > button {
+    color: white !important;
+    background-color: red;
+}
+
+@media screen and (max-width: 320px) {
+    h1 {
+        font-size: 1.5em;
+        text-align: center;
+    }
+
+    h4 {
+        font-size: 1em;
+        text-align: center;
+    }
+
+    .chart-card {
+        height: 180px;
+    }
+
+    .chart-card > img {
+        height: 133px;
+        width: 133px;
+    }
+
+    .chart-card > h5 {
+        font-family: 'Dosis', sans-serif;
+        height: 47px;
+        font-size: 1em;
+        padding: 5px;
+        font-weight: 600;
+    }
+}
+
+@media screen and (min-width: 321px) and (max-width: 575px) {
+    h1 {
+        font-size: 1.5em;
+        text-align: center;
+    }
+
+    h4 {
+        font-size: 1em;
+        text-align: center;
+    }
+
+    .chart-card {
+        height: 230px;
+    }
+
+    .chart-card > h5 {
+        font-family: 'Dosis', sans-serif;
+        height: 47px;
+        font-size: 1em;
+        padding: 5px;
+        font-weight: 600;
+    }
+}
+
+@media screen and (min-width: 576px) and (max-width: 767px) {
+
+}
