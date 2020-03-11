@@ -180,6 +180,29 @@ h4 {
         font-weight: 600;
     }
 
+    #chart-details {
+        height: 230px;
+    }
+
+    #chart-title {
+        font-size: 1.2em;
+        text-align: left;
+    }
+
+    #chart-description {
+        font-size: .9em;
+        letter-spacing: 1px;
+    }
+
+    #chart-updated {
+        font-size: .7em;
+        letter-spacing: 1px;
+    }
+
+    .chart-img > img {
+        width: 88px !important;
+    }
+
     article.chart-card > h5 {
         text-align: center;
     }
