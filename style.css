@@ -102,11 +102,12 @@ h4 {
     }
 
     .chart-card {
-        height: 280px;
+        height: 205px;
     }
 
     .chart-card > img {
-        height: 233px;
+        height: 158px;
+        object-fit: cover;
     }
 
     .chart-card > h5 {
@@ -122,7 +123,7 @@ h4 {
     }
 
     .chart-img > img {
-        object-fit: contain;
+        object-fit: cover !important;
         height: 88px !important;
     }
 }
@@ -146,6 +147,7 @@ h4 {
         font-size: 1.2em;
         padding: 5px 10px;
         font-weight: 600;
+        text-align: center;
     }
 
     .chart-entry {
@@ -177,9 +179,13 @@ h4 {
         padding: 10px;
         font-weight: 600;
     }
+
+    article.chart-card > h5 {
+        text-align: center;
+    }
 }
 
-@media screen and (min-width: 992px){
+@media screen and (min-width: 992px) and (max-width: 1199px){
     h1 {
         font-size: 2.8em;
     }
@@ -192,13 +198,13 @@ h4 {
     .chart-card > h5 {
         font-family: 'Dosis', sans-serif;
         height: 47px;
-        font-size: 1.2em;
+        font-size: 1em;
         padding: 10px;
         font-weight: 600;
     }
 }
 
-@media screen and (min-width: 1024px){
+@media screen and (min-width: 1200px){
     header {
         width: 1024px !important;
         margin-left: auto !important;
@@ -225,7 +231,7 @@ h4 {
     .chart-card > h5 {
         font-family: 'Dosis', sans-serif;
         height: 47px;
-        font-size: 1.2em;
+        font-size: 1em;
         padding: 10px 5px;
         font-weight: 600;
         text-align: center;
