@@ -41,13 +41,39 @@ h1 {
     letter-spacing: 1px;
 }
 
+.chart-entry {
+    height: 88px;
+    padding: 0;
+    background-color: #161616 !important;
+}
+
+.chart-position {
+    font-size: 1.5em;
+}
+
+.chart-title {
+    font-size: .9em;
+}
+
+.chart-artist {
+    font-size: .8em;
+}
+
+.chart-img {
+    height: 88px;
+}
+
+.chart-img > img {
+    object-fit: cover;
+}
+
 h4 {
     font-size: 1em;
     text-align: center;
 }
 
 .chart-card > img {
-    object-fit: cover;
+    object-fit: contain;
 }
 
 @media screen and (max-width: 320px) {
@@ -90,11 +116,24 @@ h4 {
         padding: 5px;
         font-weight: 600;
     }
+
+    #chart-details {
+        height: 180px;
+    }
+
+    .chart-img > img {
+        object-fit: contain;
+        height: 88px !important;
+    }
 }
 
 @media screen and (min-width: 576px) and (max-width: 767px) {
     h1 {
         font-size: 2em;
+    }
+
+    #chart-details {
+        height: 300px;
     }
 
     .chart-card {
@@ -107,6 +146,22 @@ h4 {
         font-size: 1.2em;
         padding: 5px 10px;
         font-weight: 600;
+    }
+
+    .chart-entry {
+        height: 100px;
+        margin-top: 0 !important;
+        margin-bottom: 10px !important;
+    }
+
+    .chart-img {
+        height: 88px !important;
+        width: 88px !important;
+    }
+
+    .chart-img > img {
+        height: 88px !important;
+        width: 88px !important;
     }
 }
 
