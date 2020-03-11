@@ -22,6 +22,25 @@ h1 {
     text-align: center;
 }
 
+#chart-img {
+    height: 130px;
+}
+
+#chart-title {
+    font-size: .8em;
+    text-align: left;
+}
+
+#chart-description {
+    font-size: .7em;
+    letter-spacing: 1px;
+}
+
+#chart-updated {
+    font-size: .65em;
+    letter-spacing: 1px;
+}
+
 h4 {
     font-size: 1em;
     text-align: center;
