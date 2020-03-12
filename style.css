@@ -213,6 +213,36 @@ h4 {
         font-size: 2.8em;
     }
 
+    #chart-img {
+        height: 300px;
+    }
+
+    #chart-img > img {
+        object-fit: cover;
+        height: 100%;
+    }
+
+    #chart-details {
+        height: 350px !important;
+    }
+
+    #chart-title {
+        font-size: 1.8em;
+    }
+
+    #chart-description {
+        font-size: 1.1em;
+    }
+
+    #chart-updated {
+        font-size: .9em;
+    }
+
+    .chart-img > img {
+        object-fit: contain !important;
+        height: 100%;
+    }
+
     .chart-card {
         height: 301px;
         width: 301px;
@@ -244,6 +274,37 @@ h4 {
         font-size: 2.8em;
         margin-top: 50px;
         margin-bottom: 50px;
+    }
+
+    #chart-img {
+        height: 300px;
+    }
+
+    #chart-img > img {
+        object-fit: cover;
+        height: 100%;
+    }
+
+    #chart-details {
+        height: 350px !important;
+    }
+
+    #chart-title {
+        font-size: 1.8em;
+        margin: 0 0 10px;
+    }
+
+    #chart-description {
+        font-size: 1.1em;
+    }
+
+    #chart-updated {
+        font-size: .9em;
+    }
+
+    .chart-img > img {
+        object-fit: contain !important;
+        height: 100%;
     }
 
     .chart-card {
