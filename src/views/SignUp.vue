@@ -8,9 +8,7 @@
             </div>
         </div>
         <div class="row mt-5 px-lg-3">
-            <div v-if="error" class="container alert alert-danger">
-                {{ error_message }}
-            </div>
+            <ErrorMessage />
             <form action="#" class="col-12" v-on:submit.prevent="handleSubmit">
                 <div class="row">
                     <div class="col-12 col-md-6 form-group">
@@ -41,7 +39,7 @@
                         <label for="email" class="text-white">
                             Email:
                         </label>
-                        <input id="email" type="email" class="form-control bg-dark text-white" ref="email" required>
+                        <input id="email" type="email" class="form-control bg-dark text-white" ref="email" required v-on:keyup="resetErrors">
                     </div>
                 </div>
                 <div class="row">
@@ -92,10 +90,11 @@
 </template>
 
 <script>
-    import firebase from '../firebase';
+    import ErrorMessage from "../components/ErrorMessage";
 
     export default {
         name: 'SignUp',
+        components: {ErrorMessage},
         data () {
             return {
                 user : {
@@ -112,19 +111,16 @@
         methods: {
             handleSubmit: function () {
                 if (this.$refs.password.value !== this.$refs.password_confirmation.value) {
-                    this.error_message = 'password mismatch';
-                    return this.error = true;
+                    return this.$store.dispatch('setErrors', 'password mismatch!');
                 }
+
                 this.user.gender = this.$refs.gender;
                 this.user.first_name = this.$refs.first_name;
                 this.user.last_name = this.$refs.last_name;
-
-                firebase.auth().createUserWithEmailAndPassword(this.$refs.email.value, this.$refs.password.value)
-                .then(() => this.store.commit('SET_AUTH_USER'))
-                .catch(error => console.error(error));
+                this.$store.dispatch('signUp', {email: this.$refs.email.value, password: this.$refs.password.value});
             },
             resetErrors: function () {
-                this.error = false;
+                this.$store.dispatch('resetErrors');
             }
         }
     }

@@ -8,16 +8,14 @@
             </div>
         </div>
         <div class="row mt-5 px-lg-3">
-            <div v-if="error" class="container alert alert-danger">
-                {{ error_message }}
-            </div>
+            <ErrorMessage />
             <form action="#" class="col-12" v-on:submit.prevent="handleSubmit">
                 <div class="row">
                     <div class="col-12 col-md-6 col-md-6 offset-md-3 form-group">
                         <label for="email" class="text-white">
                             Email:
                         </label>
-                        <input id="email" type="email" class="form-control bg-dark text-white" ref="email" required>
+                        <input id="email" type="email" class="form-control bg-dark text-white" ref="email" v-on:keyup="resetErrors" required>
                     </div>
                     <div class="col-12 col-md-6 col-md-6 offset-md-3 form-group">
                         <label for="password" class="text-white">
@@ -57,17 +55,19 @@
 </template>
 
 <script>
+    import ErrorMessage from "../components/ErrorMessage";
 
     export default {
         name: 'SignIn',
+        components: {ErrorMessage},
         data() {
             return {
                 credentials: {
                     email: '',
                     password: '',
                 },
-                error: false,
-                error_message: ''
+                error: this.$store.state.error,
+                error_message: this.$store.state.error_message
             }
         },
         methods: {
@@ -77,7 +77,9 @@
                 this.$store.dispatch('signIn', this.credentials);
             },
             resetErrors: function () {
-                this.error = false;
+                if (this.$store.state.error) {
+                    this.$store.dispatch('resetErrors');
+                }
             }
         }
     }
